@@ -8,6 +8,7 @@ import (
 
 	"github.com/guagno/goworm/ctilde"
 	"github.com/guagno/goworm/lat"
+	"github.com/guagno/goworm/wdb"
 )
 
 var ell int
@@ -50,6 +51,7 @@ func read_param() {
 func main() {
 	rand.Seed(time.Now().UnixNano())
 	read_param()
+	wdb.Init_DB()
 	ctilde.Init_ctilde(lam)
 	lat.InitGeometry(ell)
 	lat.InitField(restart)
